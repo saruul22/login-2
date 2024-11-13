@@ -1,0 +1,72 @@
+.weather-wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* container dotor baigaa elementuud tuunees gadagsh halihgui */
+    overflow: hidden;
+    
+    /* transform: scale(0); */
+
+    transition: transform .5s ease, height .2s ease;
+}
+
+.weather-wrapper.active-popup{
+    transform: scale(1);
+}
+
+.weather-wrapper.active{
+    height: 520px;
+}
+
+.weather-wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.weather-wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.weather-wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.weather-wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.weather-wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.weather-wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
